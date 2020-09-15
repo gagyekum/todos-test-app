@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-import { getAllTodos } from './todoservice'
 
 const TodoTable = ({todos}) => {
     return (

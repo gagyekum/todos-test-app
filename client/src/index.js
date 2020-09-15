@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import App from './App';
+import CreateTodo from './createTodo';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route path="/create" component={CreateTodo} />
+        <Route path="/" component={App} />
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

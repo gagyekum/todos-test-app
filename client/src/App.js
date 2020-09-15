@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
     Navbar,
     NavbarToggler,
@@ -7,6 +8,8 @@ import {
     NavItem,
     NavLink,
     Collapse,
+    Button,
+    Container
 } from 'reactstrap';
 import TodoTable from './table';
 import { getAllTodos, createTodo } from './todoservice';
@@ -17,7 +20,6 @@ function App() {
 
     const fetchTodos = () => {
       getAllTodos().then((todos) => {
-          console.log('todos => ', todos);
           setApiTodos(todos)
       });
     };
@@ -27,21 +29,22 @@ function App() {
     }, [])
 
     return (
-        <div>
+        <Container>
             <Navbar color='light' expand='md'>
                 <NavbarBrand href='/'>Todo Example</NavbarBrand>
                 <NavbarToggler onClick={() => {}} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='mr-auto' navbar>
                         <NavItem>
-                            <NavLink href='/list/'>Todo List</NavLink>
+                            <Link><NavLink href='/'>Todo List</NavLink></Link>
                         </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>
 
+            <Link to="/create"><Button>Add Todo</Button></Link>
             <TodoTable todos={apiTodos} />
-        </div>
+        </Container>
     );
 }
 
