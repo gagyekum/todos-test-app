@@ -9,12 +9,17 @@ import { getAllTodos } from './todoservice';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
-    const [apiTodos, setApiTodos] = useState([])
+    const [apiTodos, setApiTodos] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     const fetchTodos = () => {
+      setLoading(true)
       getAllTodos().then((todos) => {
           setApiTodos(todos)
-      });
+      }).then(() => setLoading(false)).catch(() => {
+        setLoading(false)
+        setApiTodos([])
+      })
     };
 
     useEffect(() => {
