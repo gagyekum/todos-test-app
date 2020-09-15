@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { createTodo } from './todoservice'; 
 
 const CreateTodo = () => {
     const [formData, setFormData] = useState({})
+    const history = useHistory();
 
     const onFormSubmit = (e)  => {
-        console.log('f',formData)
-        // submit formData to server
+        e.preventDefault();
+        const data = {
+            title: formData.title,
+            completed: formData.completed === 'on' ? true :false
+        }
+        createTodo(data).then(resp => {
+            if(resp) {
+                history.push('/')
+            }
+        })
     }
 
     const handleInputChange = e => {
@@ -14,13 +25,12 @@ const CreateTodo = () => {
         const data = {
             [name]: value
         }
-        console.log('data =>',data)
         setFormData(prevState => ({ ...prevState, ...data}))
     }
 
     return (
         <Container>
-            <Form onSubmit={onFormSubmit} >
+            <Form onSubmit={onFormSubmit}>
                 <FormGroup>
                     <Label for="title">Title</Label>
                     <Input onChange={handleInputChange} type="text" name="title" id="title" placeholder="Enter title" />

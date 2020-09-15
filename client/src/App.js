@@ -12,7 +12,7 @@ import {
     Container
 } from 'reactstrap';
 import TodoTable from './table';
-import { getAllTodos, createTodo } from './todoservice';
+import { getAllTodos } from './todoservice';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
