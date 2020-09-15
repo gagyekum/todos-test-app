@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import { Container, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
 
 const BasePage = ({ children, isOpen }) => {
     return (
@@ -11,7 +11,7 @@ const BasePage = ({ children, isOpen }) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='mr-auto' navbar>
                         <NavItem>
-                            <Link><NavLink href='/'>Todo List</NavLink></Link>
+                            <NavLink to='/'>Todo List</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
