@@ -1,11 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Container, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
+import {
+    Container,
+    Navbar,
+    NavbarBrand,
+    NavbarToggler,
+    Collapse,
+    Nav,
+    NavItem,
+} from 'reactstrap';
 
 const BasePage = ({ children, isOpen }) => {
     return (
         <Container>
-            <Navbar color='light' expand='md' className="mb-3">
+            <Navbar color='light' expand='md' className='mb-3'>
                 <NavbarBrand href='/'>Todo Example</NavbarBrand>
                 <NavbarToggler onClick={() => {}} />
                 <Collapse isOpen={isOpen} navbar>
@@ -19,7 +27,7 @@ const BasePage = ({ children, isOpen }) => {
 
             {children}
         </Container>
-    )
-}
+    );
+};
 
 export default BasePage;

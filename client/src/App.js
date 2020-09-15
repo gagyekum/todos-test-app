@@ -33,7 +33,9 @@ function App() {
                 <Link to='/create'>
                     <Button>Add Todo</Button>
                 </Link>
-                {loading && <Spinner color='dark' className="position-absolute" />}
+                {loading && (
+                    <Spinner color='dark' className='position-absolute' />
+                )}
             </div>
 
             <TodoTable todos={apiTodos} />

@@ -1,4 +1,4 @@
-#!/Users/gideon/Source/Interviews/django-react-app/denv/bin/python
+#!/Users/kiidbrian/Projects/python_django/todos-test-app/denv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

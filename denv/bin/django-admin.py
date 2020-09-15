@@ -1,4 +1,4 @@
-#!/Users/gideon/Source/Interviews/django-react-app/denv/bin/python3.7
+#!/Users/kiidbrian/Projects/python_django/todos-test-app/denv/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
