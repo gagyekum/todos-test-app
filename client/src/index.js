@@ -7,15 +7,15 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <React.Fragment>
-    <Router>
-      <Switch>
-        <Route path="/create" component={CreateTodo} />
-        <Route path="/" component={App} />
-      </Switch>
-    </Router>
-  </React.Fragment>,
-  document.getElementById('root')
+    <React.Fragment>
+        <Router>
+            <Switch>
+                <Route path='/create' component={CreateTodo} />
+                <Route path='/' component={App} />
+            </Switch>
+        </Router>
+    </React.Fragment>,
+    document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
