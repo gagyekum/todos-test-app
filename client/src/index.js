@@ -7,14 +7,14 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <Router>
       <Switch>
         <Route path="/create" component={CreateTodo} />
         <Route path="/" component={App} />
       </Switch>
     </Router>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 
