@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    Collapse,
     Button,
-    Container
 } from 'reactstrap';
 import TodoTable from './table';
+import BasePage from './BasePage';
 import { getAllTodos } from './todoservice';
 
 function App() {
@@ -29,22 +22,10 @@ function App() {
     }, [])
 
     return (
-        <Container>
-            <Navbar color='light' expand='md'>
-                <NavbarBrand href='/'>Todo Example</NavbarBrand>
-                <NavbarToggler onClick={() => {}} />
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className='mr-auto' navbar>
-                        <NavItem>
-                            <Link><NavLink href='/'>Todo List</NavLink></Link>
-                        </NavItem>
-                    </Nav>
-                </Collapse>
-            </Navbar>
-
+        <BasePage>
             <Link to="/create"><Button>Add Todo</Button></Link>
             <TodoTable todos={apiTodos} />
-        </Container>
+        </BasePage>
     );
 }
 

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { createTodo } from './todoservice'; 
+import BasePage from './BasePage';
 
 const CreateTodo = () => {
     const [formData, setFormData] = useState({})
@@ -11,7 +12,7 @@ const CreateTodo = () => {
         e.preventDefault();
         const data = {
             title: formData.title,
-            completed: formData.completed === 'on' ? true :false
+            completed: formData.completed === 'on' ? true : false
         }
         createTodo(data).then(resp => {
             if(resp) {
@@ -29,7 +30,7 @@ const CreateTodo = () => {
     }
 
     return (
-        <Container>
+        <BasePage>
             <Form onSubmit={onFormSubmit}>
                 <FormGroup>
                     <Label for="title">Title</Label>
@@ -41,9 +42,9 @@ const CreateTodo = () => {
                         Completed
                     </Label>
                 </FormGroup>
-                <Button>Submit</Button>
+                <Button className="mt-3">Submit</Button>
             </Form>
-        </Container>
+        </BasePage>
     )
 }
 
